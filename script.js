@@ -57,24 +57,76 @@ function displayCat() {
 }
 
 // Function to display the cat-heart.gif
+// Function to display "cat_0.gif" with a question and options
 function displayCatHeart() {
     // Clear existing content in the image container
     document.getElementById('image-container').innerHTML = '';
+
     // Get the container where the image will be displayed
     var imageContainer = document.getElementById('image-container');
-    // Create a new Image element for the cat-heart
-    var catHeartImage = new Image();
-    // Set the source (file path) for the cat-heart image
-    catHeartImage.src = 'cat-heart.gif'; // Assuming the cat-heart image is named "cat-heart.gif"
-    // Set alternative text for the image (for accessibility)
-    catHeartImage.alt = 'Cat Heart';
-    // When the cat-heart image is fully loaded, add it to the image container
-    catHeartImage.onload = function() {
-        imageContainer.appendChild(catHeartImage);
-        // Hide the options container
+
+    // Create a new Image element for "cat_0.gif"
+    var catZeroImage = new Image();
+    catZeroImage.src = 'cat_0.gif'; // Ensure this file exists
+    catZeroImage.alt = 'Suspicious Cat';
+
+    // Create a question text
+    var message = document.createElement('div');
+    message.innerText = "Did you just press no before you pressed yes? 🤨";
+    message.style.fontSize = "32px";
+    message.style.marginTop = "20px";
+    message.style.color = "#ff4d6d";
+    message.style.fontFamily = "'Sacramento', cursive";
+
+    // Create Yes button
+    var yesButton = document.createElement('button');
+    yesButton.innerText = "Yes";
+    yesButton.style.padding = "10px 20px";
+    yesButton.style.margin = "10px";
+    yesButton.style.fontSize = "26px";
+    yesButton.style.fontFamily = "'Sacramento', cursive";
+    yesButton.style.backgroundColor = "#FB607F";
+    yesButton.style.color = "white";
+    yesButton.style.border = "none";
+    yesButton.style.cursor = "pointer";
+    
+    // Set up the button to redirect to final page
+    yesButton.onclick = function() {
+        window.location.href = "final.html"; // Redirect to final page
+    };
+
+    // Create No button
+    var noButton = document.createElement('button');
+    noButton.innerText = "No";
+    noButton.style.padding = "10px 20px";
+    noButton.style.margin = "10px";
+    noButton.style.fontSize = "26px";
+    noButton.style.fontFamily = "'Sacramento', cursive";
+    noButton.style.backgroundColor = "#FB607F";
+    noButton.style.color = "white";
+    noButton.style.border = "none";
+    noButton.style.cursor = "pointer";
+
+    // No button logic - Increase Yes button size on each click
+    noButton.onclick = function() {
+        noButton.innerText = "You sure?"; 
+        var currentFontSize = window.getComputedStyle(yesButton).getPropertyValue('font-size');
+        var newSize = parseFloat(currentFontSize) * 1.5; // Increase Yes size
+        yesButton.style.fontSize = newSize + 'px';
+    };
+
+    // Append elements to image container
+    catZeroImage.onload = function() {
+        imageContainer.appendChild(catZeroImage);
+        imageContainer.appendChild(message);
+        imageContainer.appendChild(yesButton);
+        imageContainer.appendChild(noButton);
+
+        // Hide the original options container
         document.getElementById('options').style.display = 'none';
     };
 }
+
 
 // Display the cat.gif initially
 displayCat();
