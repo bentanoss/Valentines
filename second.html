@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Second Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <div id="image-container">
+            <img src="cat_0.gif" alt="Confused Cat">
+        </div>
+        <div id="text-container">
+            <p>Did you just press no before you pressed yes?</p>
+            <div id="options">
+                <button id="yes-button" onclick="goToFinal()">Yes</button>
+                <button id="no-button" onclick="increaseYesSize()">No</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function goToFinal() {
+            window.location.href = 'final.html'; // Redirect to final page
+        }
+
+        function increaseYesSize() {
+            document.getElementById('no-button').innerText = 'You sure?'; 
+            var yesButton = document.getElementById('yes-button');
+            var newSize = parseFloat(window.getComputedStyle(yesButton).fontSize) * 2;
+            yesButton.style.fontSize = newSize + 'px';
+        }
+    </script>
+</body>
+</html>
