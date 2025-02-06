@@ -2,6 +2,7 @@
 
 body {
     font-family: 'Sacramento', cursive; /* Fallback font family */
+    font-size: 42px;
     text-align: center; /* Center-align text */
     margin: 0; /* Remove default margin */
     background-color: #FADADD; /* Set background color to light pink */
