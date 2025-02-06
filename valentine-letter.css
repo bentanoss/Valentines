@@ -1,0 +1,67 @@
+/* General Page Styling */
+body {
+    font-family: 'Georgia', serif;
+    background-color: #FFD1DC; /* Soft pink background */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('assets/images/letter-background.png'); /* Optional background texture */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Main Card Container */
+.card-container {
+    background: rgba(255, 255, 255, 0.9); /* White with slight transparency */
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    margin: 20px;
+    text-align: left;
+    line-height: 1.8;
+}
+
+/* Header (Salutation) */
+h1 {
+    font-family: 'Sacramento', cursive;
+    font-size: 48px;
+    color: #C2185B; /* Deep pink */
+    text-align: center;
+}
+
+/* Paragraph Text */
+p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Signature Section */
+p:last-child {
+    text-align: right;
+    font-weight: bold;
+}
+
+/* Link/Button Style */
+.proposal-link {
+    display: inline-block;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #FB607F;
+    text-decoration: none;
+    font-size: 20px;
+    border: 2px solid #FB607F;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Link Hover Effect */
+.proposal-link:hover {
+    background-color: #FB607F;
+    color: white;
+}
